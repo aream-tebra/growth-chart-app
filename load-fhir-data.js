@@ -98,7 +98,7 @@ GC.get_data = function() {
             observationValues && observationValues.forEach(function(v) {
                 if (isValidObservation(v)) {
                     arr.push({
-                        agemos: patientAgeInMonths(v.effectiveDateTime, patient),
+                        agemos: patientAgeInMonths(v.effectivePeriod.start, patient),
                         value: toUnit(v.valueQuantity)
                     })
                 }
